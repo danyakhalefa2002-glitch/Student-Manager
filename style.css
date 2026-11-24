@@ -1,0 +1,517 @@
+/* الألوان التي استخدمتها في التصميم حتى أستطيع تغييرها من مكان واحد */
+:root {
+  --background: #281724;
+  --background-soft: #352131;
+  --surface: #fff9f5;
+  --plum: #43243d;
+  --plum-light: #61344f;
+  --rose: #b65375;
+  --rose-light: #e7a4b5;
+  --rose-soft: #f4e1e5;
+  --text: #352832;
+  --muted: #887781;
+  --border: #eadde0;
+  --danger: #a83f55;
+}
+
+/* إزالة المسافات الافتراضية وتوحيد حساب أحجام العناصر */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* تنسيق الصفحة بالكامل وتحديد لون الخلفية والخط */
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 85% 5%, #633b54 0%, transparent 35%),
+    var(--background);
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+}
+
+/* تنسيق الشريط الموجود أعلى الصفحة */
+.topbar {
+  height: 82px;
+  padding: 0 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(40, 23, 36, 0.55);
+}
+
+/* تنسيق اسم المشروع */
+.logo {
+  color: #fff9f5;
+  font-family: "Playfair Display", serif;
+  font-size: 29px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: -1px;
+}
+
+/* تغيير لون النقطة بجانب اسم المشروع */
+.logo span {
+  color: var(--rose-light);
+}
+
+/* تنسيق النص الصغير في الجهة الأخرى من الشريط */
+.topbar-label {
+  color: #c9aebe;
+  font-size: 10px;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+/* تحديد عرض المحتوى ووضعه في منتصف الصفحة */
+.container {
+  width: min(1100px, 84%);
+  margin: 0 auto;
+}
+
+/* ترتيب عنوان الصفحة وعداد الطلاب بجانب بعضهما */
+.welcome-section {
+  padding: 85px 0 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 35px;
+}
+
+/* تنسيق العبارة الصغيرة فوق العنوان الرئيسي */
+.eyebrow {
+  color: var(--rose-light);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+/* تنسيق العنوان الرئيسي وحجم الخط والمسافات بين السطور */
+.welcome-section h1 {
+  color: #fff8f2;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(52px, 6.5vw, 78px);
+  line-height: 1.02;
+  letter-spacing: -2.5px;
+}
+
+/* إعطاء الكلمة الثانية لونًا مختلفًا ومظهرًا مائلًا */
+.welcome-section h1 span {
+  color: var(--rose-light);
+  font-style: italic;
+}
+
+/* تنسيق الوصف الموجود أسفل العنوان */
+.welcome-text {
+  color: #c9b8c2;
+  font-size: 14px;
+  margin-top: 22px;
+  line-height: 1.9;
+}
+
+/* تصميم مربع عدد الطلاب */
+.count-card {
+  width: 220px;
+  min-height: 170px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, #b65375, #743a5b);
+  color: white;
+  border-radius: 7px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.22);
+}
+
+/* إضافة دوائر خفيفة داخل مربع العدد للزينة */
+.count-card::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  right: -65px;
+  top: -65px;
+  box-shadow:
+    0 0 0 20px rgba(255, 255, 255, 0.04),
+    0 0 0 40px rgba(255, 255, 255, 0.03);
+}
+
+/* تنسيق النص الذي يوضح معنى الرقم */
+.count-label {
+  color: #f8dde5;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+/* تكبير رقم الطلاب ليكون واضحًا */
+.count-number {
+  font-family: "Playfair Display", serif;
+  font-size: 58px;
+  line-height: 1.25;
+  color: #ffffff;
+}
+
+/* تنسيق النص الموجود أسفل العدد */
+.count-caption {
+  color: #f8dde5;
+  font-size: 11px;
+}
+
+/* تقسيم منطقة العمل إلى قسم الإضافة وقائمة الطلاب */
+.content-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.4fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+/* تنسيق الصندوقين الأساسيين في الصفحة */
+.form-panel,
+.directory-panel {
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 32px;
+  border-radius: 7px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
+}
+
+/* إضافة خط ملون أعلى صندوق إضافة الطالب */
+.form-panel {
+  border-top: 4px solid var(--rose);
+}
+
+/* إضافة خط مختلف أعلى قائمة الطلاب */
+.directory-panel {
+  border-top: 4px solid var(--plum-light);
+}
+
+/* ترتيب رقم القسم والعنوان والوصف بجانب بعضهم */
+.section-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+/* تنسيق رقم كل قسم */
+.section-number {
+  color: var(--rose);
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+}
+
+/* تنسيق عناوين الأقسام */
+.section-heading h2 {
+  color: var(--plum);
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+/* تنسيق الوصف الصغير تحت عنوان كل قسم */
+.section-heading p {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+/* ترتيب حقول نموذج إضافة الطالب بشكل عمودي */
+#studentForm {
+  display: flex;
+  flex-direction: column;
+}
+
+/* تنسيق أسماء الحقول مثل الاسم والعمر والتخصص */
+#studentForm label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 9px;
+}
+
+/* تنسيق حقول إدخال بيانات الطالب */
+#studentForm input {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  margin-bottom: 21px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  outline: none;
+  background: #fffcfa;
+  color: var(--text);
+  font: inherit;
+  font-size: 12px;
+  transition: all 0.25s ease;
+}
+
+/* إظهار لون الحدود عند الضغط على حقول الإدخال أو البحث */
+#studentForm input:focus,
+.search-box:focus-within {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 3px rgba(182, 83, 117, 0.13);
+  background: white;
+}
+
+/* تغيير لون النص التوضيحي داخل الحقول */
+input::placeholder {
+  color: #b2a3aa;
+}
+
+/* تنسيق زر إضافة الطالب */
+.add-button {
+  height: 49px;
+  border: none;
+  border-radius: 4px;
+  background: var(--plum);
+  color: white;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* ضبط المسافة وحجم علامة الإضافة داخل الزر */
+.add-button span {
+  margin-left: 8px;
+  font-size: 18px;
+}
+
+/* تغيير لون الزر وتحريكه قليلًا عند المرور عليه */
+.add-button:hover {
+  background: var(--rose);
+  box-shadow: 0 7px 18px rgba(182, 83, 117, 0.22);
+  transform: translateY(-2px);
+}
+
+/* ضبط المسافة أسفل عنوان قائمة الطلاب */
+.directory-header .section-heading {
+  margin-bottom: 25px;
+}
+
+/* تنسيق صندوق البحث وترتيب الأيقونة وحقل البحث داخله */
+.search-box {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: #fffcfa;
+  transition: all 0.25s ease;
+}
+
+/* تنسيق علامة البحث */
+.search-box span {
+  color: var(--rose);
+  font-size: 24px;
+}
+
+/* تنسيق حقل البحث */
+.search-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 12px;
+}
+
+/* إزالة تأثير الظل من الحقل نفسه لأن التأثير موجود في صندوق البحث */
+.search-box input:focus {
+  box-shadow: none;
+}
+
+/* ترتيب بطاقات الطلاب داخل القائمة */
+.students-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+}
+
+/* تنسيق بطاقة كل طالب وترتيب بياناته وزر الحذف */
+.student-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 18px 10px;
+  margin: 0 -10px;
+  border-bottom: 1px solid var(--border);
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+/* تغيير خلفية بطاقة الطالب عند المرور عليها */
+.student-card:hover {
+  background: #fcf1f3;
+}
+
+/* ترتيب الصورة التي تحتوي على أول حرف وبيانات الطالب */
+.student-info {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+}
+
+/* تصميم الدائرة أو المربع الذي يظهر فيه أول حرف من اسم الطالب */
+.student-avatar {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: var(--rose-soft);
+  color: var(--plum);
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* السماح لبيانات الطالب بالتقلص دون تجاوز مساحة البطاقة */
+.student-details {
+  min-width: 0;
+}
+
+/* تنسيق اسم الطالب */
+.student-details h3 {
+  color: var(--plum);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* تنسيق التخصص الموجود أسفل الاسم */
+.student-details p {
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 5px;
+}
+
+/* تنسيق عمر الطالب */
+.student-age {
+  color: var(--muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* تنسيق زر حذف الطالب */
+.delete-button {
+  border: 1px solid #e8cbd4;
+  background: #fff8fa;
+  color: var(--danger);
+  border-radius: 4px;
+  padding: 8px 11px;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* تغيير شكل زر الحذف عند المرور عليه */
+.delete-button:hover {
+  background: var(--danger);
+  color: white;
+  border-color: var(--danger);
+}
+
+/* إظهار رسالة في منتصف القائمة عندما لا توجد نتائج */
+.empty-message {
+  padding: 35px 10px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* تنسيق الجزء السفلي من الصفحة */
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 35px 0;
+  margin-top: 45px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: #bfaab8;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+/* تعديل التصميم ليناسب الشاشات المتوسطة والصغيرة */
+@media (max-width: 760px) {
+  .topbar {
+    padding: 0 6%;
+  }
+
+  .container {
+    width: 88%;
+  }
+
+  /* جعل العنوان والعداد فوق بعضهما بدلًا من وضعهما بجانب بعضهما */
+  .welcome-section {
+    padding: 55px 0 40px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .welcome-section h1 {
+    font-size: 58px;
+  }
+
+  /* جعل مربع العدد يأخذ عرض الصفحة */
+  .count-card {
+    width: 100%;
+    min-height: 130px;
+  }
+
+  /* وضع قسم الإضافة وقائمة الطلاب تحت بعضهما */
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-panel,
+  .directory-panel {
+    padding: 25px;
+  }
+}
+
+/* تعديلات إضافية للهواتف الصغيرة */
+@media (max-width: 420px) {
+  .topbar-label {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .welcome-section h1 {
+    font-size: 48px;
+  }
+
+  .student-card {
+    gap: 8px;
+  }
+
+  .student-age {
+    font-size: 10px;
+  }
+
+  .delete-button {
+    padding: 7px;
+  }
+
+  /* ترتيب نصوص أسفل الصفحة بشكل عمودي */
+  footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
